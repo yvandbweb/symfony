@@ -1,0 +1,17 @@
+<h1>Add user</h1>
+<div id="umessage" class="me"></div><div style="clear:both"></div>
+{% if form1 is defined %}
+    {{ form_start(form1, {'attr': {'id': 'none2'}}) }}
+    {{ form_widget(form1) }}
+    <input type="submit" value="save user" type="button" onclick="return userhalt()" class="btn btn-primary">
+    {{ form_end(form1) }}   
+{% endif %}  
+
+
+<script>
+    function userhalt(){
+        $("#umessage").html("Adding users has been disabled");
+        return false;
+    }
+    
+</script>

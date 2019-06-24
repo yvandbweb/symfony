@@ -1,0 +1,15 @@
+{% if form is defined %}
+    <div style="clear:both"></div>
+    <div class="messagesavecom{{vararr.id}} me"></div>
+    <div style="clear:both"></div>    
+    {{ form_start(form, {'attr': {'id': 'formcomment'}}) }}
+    <input type="hidden" name="id" value="{{vararr.id}}">
+    {{ form_widget(form) }}
+    <input type="button" type="button" class="btn btn-primary" value="Save comment" onclick="savecomment({{vararr.id}})">
+    <input type="button" type="button" class="btn btn-warning" value="Cancel" onclick="cancelcomment({{vararr.id}})"><br/>
+    {{ form_end(form) }}<br/>  
+{% else %}
+    <button type="button" class="btn btn-danger" onclick="deletecomment({{id}})">Delete</button> {{datetime|date("d-m-Y h:m:s")}} {{user}} {{text}} 
+{% endif %}
+
+

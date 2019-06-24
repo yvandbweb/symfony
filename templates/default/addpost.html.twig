@@ -1,0 +1,18 @@
+<h1>Add post</h1>
+<div id="pmessage" class="me"></div><div style="clear:both"></div>
+{% if form is defined %}
+    {{ form_start(form, {'attr': {'id': 'none'}}) }}
+    <input type="hidden" name="id" value="{{vararr.id}}">
+    {{ form_widget(form) }}
+    <input type="submit" value="save post" type="button" class="btn btn-primary" onclick="return posthalt()">
+    {{ form_end(form) }}   
+{% endif %}  
+
+
+<script>
+    function posthalt(){
+        $("#pmessage").html("Posting has been disabled");
+        return false;
+    }
+    
+</script>
