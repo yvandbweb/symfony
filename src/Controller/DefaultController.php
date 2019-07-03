@@ -30,7 +30,7 @@ class DefaultController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Post::class);
          
         $offset=0;
-        $vararr["steps"]=3;
+        $vararr["steps"]=4;
         $vararr["totalrest"]=ceil($repository->countposts()/$vararr["steps"]);    
         $vararr["i1"]=1;
         $vararr["total"]=$repository->countposts();            
